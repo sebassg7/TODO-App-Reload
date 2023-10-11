@@ -1,8 +1,8 @@
-export const TodoItem = () => {
+export const TodoItem = ({text}) => {
   return (
     <li>
       <span>V</span>
-      <p>Headbanging Rock</p>
+      <p>{text}</p>
       <span>X</span>
     </li>
   )

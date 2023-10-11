@@ -1,14 +1,23 @@
+import { useState } from 'react';
 import './TodoSearch.css';
 
+
 export const TodoSearch = () => {
+
+  const [searchValue, setSearchValue] = useState('');
+  const onSearchValueChange = ({target}) => {
+    setSearchValue(target.value)
+  };
+
+  console.log('Los usuarios estan buscando' + ' ' + searchValue);
+
   return (
     <input  
     placeholder="Agregar actividad" 
     className="TodoSearch"
-    onChange={(event) => {
-      console.log('Escribiste en el input')
-      console.log(event.target.value);
-    }}
+    value={searchValue}
+    onChange={onSearchValueChange}
+    
     />
   )
 }

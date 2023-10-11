@@ -1,10 +1,16 @@
 import './TodoCounter.css'
 
-export const TodoCounter = ({total, completed}) => {
+export const TodoCounter = ({todos}) => {
+      const completedTodos = todos.filter( todo =>
+        !!todo.completed
+      ).length;
+    
+      const totalTodos = todos.length; 
+    
     return (
       <h1 className='TodoCounter'>
         
-        Has completado <span> {total} </span> de <span> {completed} </span> TODOS
+        Has completado <span> {completedTodos} </span> de <span> {totalTodos} </span> TODOS
   
       </h1>
     )

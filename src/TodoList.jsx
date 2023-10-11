@@ -1,6 +1,8 @@
+import './TodoList.css';
+
 export const TodoList = ({children}) => {
   return (
-    <ul>
+    <ul className='TodoList'>
         {children}
     </ul>
   )

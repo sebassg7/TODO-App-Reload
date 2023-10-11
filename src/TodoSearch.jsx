@@ -1,5 +1,7 @@
+import './TodoSearch.css';
+
 export const TodoSearch = () => {
   return (
-    <input type="text" placeholder="Agregar actividad"/>
+    <input  placeholder="Agregar actividad" className="TodoSearch"/>
   )
 }

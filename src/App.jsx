@@ -1,23 +1,25 @@
-import './App.css'
+import './App.css';
+import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCounter } from './TodoCounter';
+import { TodoItem } from './TodoItem';
+import { TodoList } from './TodoList';
+import { TodoSearch } from './TodoSearch';
+
 
 function App() {
   
   return (
     <>
-      <TodoItem/>
-    </>
-  )
-};
+      <TodoCounter/>
+      <TodoSearch/>
 
-const TodoItem = () => {
-  return (
-    <li>
+      <TodoList>
+        <TodoItem/>
+      </TodoList>
+
+      <CreateTodoButton/>
       
-      <span>V</span>
-      <p>Headbanging con Metallica en la Antartica</p>
-      <span>X</span>
-
-    </li>
+    </>
   )
 };
 

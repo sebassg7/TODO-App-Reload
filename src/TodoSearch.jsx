@@ -5,7 +5,8 @@ export const TodoSearch = (
   {
 
     searchValue, 
-    setSearchValue
+    setSearchValue,
+  
 
   }) => {
 
@@ -13,12 +14,15 @@ export const TodoSearch = (
     setSearchValue(target.value)
   };
 
+  
   return (
+    
     <input  
     placeholder="Agregar actividad" 
     className="TodoSearch"
     value={searchValue}
     onChange={onSearchValueChange}
+
     
     />
   )

@@ -14,26 +14,33 @@ const defaulTodos = [
   {text: 'Limpiar escritorio', completed: true},
 ]
 
-
 function App() {
 
   const [searchValue, setSearchValue] = useState('');
   const [todos, setTodos] = useState(defaulTodos);
+
+  const searchedTodos = todos.filter(todo =>{
+    const todoText = todo.text.toLowerCase();
+    const searchValueText = searchValue.toLowerCase();
+    const coincidenceText = todoText.includes(searchValueText);
+    return coincidenceText
+  })
 
   // console.log('Los usuarios estan buscando' + ' ' + searchValue);
 
 
   return (
     <>
-      <TodoCounter  todos={todos} />
+      <TodoCounter  todosCounter={todos} />
       <TodoSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
+        todoSearch = {todos}
       />
 
       <TodoList>
         {
-          defaulTodos.map((todo)=>(
+          searchedTodos.map((todo)=>(
             <TodoItem 
             key={todo.text}
             {...todo}
